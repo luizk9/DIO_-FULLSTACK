@@ -1,0 +1,46 @@
+/* 
+Dado um número inteiro ( n ) , retorne a diferença entre o produto de seus dígitos e a soma de seus dígitos.
+exemplo 236  
+p = 2*3*6  e  s = 2+3+6  e  p-s = 15
+*/
+
+
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+
+class DIO
+{
+
+    static void Main(string[] args)
+    {
+        int qt = int.Parse(Console.ReadLine());
+        List<string> v = new List<string>();
+// TODO: Crie as outras condições necessárias para a resolução do desafio:
+        for (  int i = 0; i < qt; i++ )
+        {
+            v.AddRange(Console.ReadLine().Split(" "));
+            
+            string a = v[0];
+            string b = v[1];
+
+            if ( a.Length < b.Length )
+            {
+              Console.WriteLine("nao encaixa");
+            }
+            else if ( a.Length >= b.Length && a.EndsWith(b))
+            {
+              Console.WriteLine("encaixa");
+            }
+            else
+            {
+              Console.WriteLine("nao encaixa");
+            }
+
+            v.Clear();
+        }
+
+    }
+
+}
